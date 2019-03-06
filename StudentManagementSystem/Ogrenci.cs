@@ -1,12 +1,14 @@
 ﻿using System;
 
 public class Ogrenci
-{      
-    private string tcNo;
-    private string isim;
-    private string soyisim;
-    private string ogrenciNo;
-	public Ogrenci()
+{
+    public string tcNo { get; set; }
+    public string ad { get; set; }
+    public string soyad { get; set; }
+    public string ogrenciNo { get; set; }
+
+
+    public Ogrenci()
 	{
 	}
 }

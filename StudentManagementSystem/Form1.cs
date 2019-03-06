@@ -39,10 +39,5 @@ namespace StudentManagementSystem
         {
             //yonet.listele();
         }
-
-        private void GridOgrenciListesi_DataSourceChanged(object sender, EventArgs e)
-        {
-            
-        }
     }
 }
