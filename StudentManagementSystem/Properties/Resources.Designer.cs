@@ -59,5 +59,15 @@ namespace OgrenciKayitSistemi.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Blank_Club_Website_Avatar_Gray {
+            get {
+                object obj = ResourceManager.GetObject("Blank_Club_Website_Avatar_Gray", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

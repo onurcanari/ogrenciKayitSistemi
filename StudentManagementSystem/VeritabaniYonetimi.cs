@@ -1,19 +1,20 @@
-﻿using System;
+﻿using MetroFramework.Controls;
 using System.Data;
 using System.Data.SQLite;
 using System.IO;
-using MetroFramework.Controls;
 public class VeritabaniYonetimi
 {
     SQLiteDataAdapter dat;
     SQLiteConnection con;
     SQLiteCommand com;
     DataSet dataSet;
-    MetroGrid metroGrid;
+    MetroGrid arananOgrenciListesi;
+    MetroGrid ogrenciListesi;
 
-    public VeritabaniYonetimi(MetroGrid metro)
-	{
-        metroGrid = metro;
+    public VeritabaniYonetimi(MetroGrid ogrenciListesi, MetroGrid arananOgrenciListesi)
+    {
+        this.ogrenciListesi = ogrenciListesi;
+        this.arananOgrenciListesi = arananOgrenciListesi;
         // Veritabani dosyamız yoksa oluşturuyor. Ardından içinde tablo oluşturuyor.
         if (!File.Exists("veritabani.sqlite"))
             VeritabaniOlustur();
@@ -34,26 +35,36 @@ public class VeritabaniYonetimi
         com.ExecuteNonQuery();
         con.Close();
     }
-    
-    public void yeniKayitEkle(string tcKimlikNo,string ad,string soyad,string ogrenciNo)
+
+    public void YeniKayitEkle(Ogrenci ogrenci)
     {
-        com = new SQLiteCommand();
+        string sql = "INSERT into Ogrenciler(TCKimlikNo,Ad,Soyad,OgrenciNo) " +
+            "VALUES('" + ogrenci.tcKimlikNo + "','" + ogrenci.ad + "','" + ogrenci.soyad + "','" + ogrenci.ogrenciNo + "')";
+        com = new SQLiteCommand(sql, con);
         con.Open();
-        com.Connection = con;
-        com.CommandText = "INSERT into Ogrenciler(TCKimlikNo,Ad,Soyad,ogrenciNo) " +
-            "VALUES('"+tcKimlikNo+"','"+ad+"','"+soyad+"','"+ogrenciNo+"')";
         com.ExecuteNonQuery();
         con.Close();
     }
-    public void listele()
+    public void KayitlariListele()
     {
+        string sql = "SELECT TCKimlikNo,Ad,Soyad,OgrenciNo From Ogrenciler;";
         con.Open();
-        dat = new SQLiteDataAdapter("SELECT TCKimlikNo,Ad,Soyad,OgrenciNo From Ogrenciler;",con);
+        dat = new SQLiteDataAdapter(sql, con);
         dataSet = new DataSet();
         dat.Fill(dataSet, "Ogrenciler");
-        metroGrid.DataSource = dataSet.Tables["Ogrenciler"];
+        ogrenciListesi.DataSource = dataSet.Tables["Ogrenciler"];
         con.Close();
+    }
 
+    public void KayitAra(string neyeGore, string ara)
+    {
+        con.Open();
+        string sql = "SELECT TCKimlikNo,Ad,Soyad,OgrenciNo FROM Ogrenciler WHERE " + neyeGore + "='" + ara + "'";
+        dat = new SQLiteDataAdapter(sql, con);
+        dataSet = new DataSet();
+        dat.Fill(dataSet, "Ogrenciler");
+        arananOgrenciListesi.DataSource = dataSet.Tables["Ogrenciler"];
+        con.Close();
     }
 
 }

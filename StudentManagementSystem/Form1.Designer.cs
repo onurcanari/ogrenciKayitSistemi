@@ -28,12 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.yeniKullaniciEkle = new MetroFramework.Controls.MetroTabControl();
-            this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
-            this.gridOgrenciListesi = new MetroFramework.Controls.MetroGrid();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.aramaBilgiPaneli = new MetroFramework.Controls.MetroPanel();
+            this.lAramaBilgi = new MetroFramework.Controls.MetroLabel();
+            this.gridArananOgrenciler = new MetroFramework.Controls.MetroGrid();
+            this.btnOgrenciAra = new MetroFramework.Controls.MetroButton();
+            this.tbAranacakMetin = new MetroFramework.Controls.MetroTextBox();
+            this.cbNeyeGore = new MetroFramework.Controls.MetroComboBox();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.btnEkle = new MetroFramework.Controls.MetroButton();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
@@ -45,119 +53,185 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.tbAd = new MetroFramework.Controls.MetroTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
-            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnOgrenciAra = new MetroFramework.Controls.MetroButton();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
-            this.yeniKullaniciEkle.SuspendLayout();
-            this.metroTabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridOgrenciListesi)).BeginInit();
+            this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
+            this.gridOgrenciListesi = new MetroFramework.Controls.MetroGrid();
+            this.yeniKullaniciEkle = new MetroFramework.Controls.MetroTabControl();
+            this.bildirimYoket = new System.Windows.Forms.Timer(this.components);
+            this.bildirimPaneli = new MetroFramework.Controls.MetroPanel();
+            this.lbildirim = new MetroFramework.Controls.MetroLabel();
+            this.aramaBilgiYoket = new System.Windows.Forms.Timer(this.components);
+            this.metroTabPage2.SuspendLayout();
+            this.aramaBilgiPaneli.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridArananOgrenciler)).BeginInit();
             this.metroTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.metroTabPage2.SuspendLayout();
-            this.metroPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.metroPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.metroTabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridOgrenciListesi)).BeginInit();
+            this.yeniKullaniciEkle.SuspendLayout();
+            this.bildirimPaneli.SuspendLayout();
             this.SuspendLayout();
             // 
-            // yeniKullaniciEkle
+            // metroTabPage2
             // 
-            this.yeniKullaniciEkle.Alignment = System.Windows.Forms.TabAlignment.Bottom;
-            this.yeniKullaniciEkle.Controls.Add(this.metroTabPage3);
-            this.yeniKullaniciEkle.Controls.Add(this.metroTabPage1);
-            this.yeniKullaniciEkle.Controls.Add(this.metroTabPage2);
-            this.yeniKullaniciEkle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.yeniKullaniciEkle.Location = new System.Drawing.Point(5, 60);
-            this.yeniKullaniciEkle.Multiline = true;
-            this.yeniKullaniciEkle.Name = "yeniKullaniciEkle";
-            this.yeniKullaniciEkle.SelectedIndex = 2;
-            this.yeniKullaniciEkle.Size = new System.Drawing.Size(922, 430);
-            this.yeniKullaniciEkle.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
-            this.yeniKullaniciEkle.Style = MetroFramework.MetroColorStyle.Green;
-            this.yeniKullaniciEkle.TabIndex = 0;
-            this.yeniKullaniciEkle.UseSelectable = true;
+            this.metroTabPage2.Controls.Add(this.aramaBilgiPaneli);
+            this.metroTabPage2.Controls.Add(this.gridArananOgrenciler);
+            this.metroTabPage2.Controls.Add(this.btnOgrenciAra);
+            this.metroTabPage2.Controls.Add(this.tbAranacakMetin);
+            this.metroTabPage2.Controls.Add(this.cbNeyeGore);
+            this.metroTabPage2.HorizontalScrollbarBarColor = true;
+            this.metroTabPage2.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage2.HorizontalScrollbarSize = 10;
+            this.metroTabPage2.Location = new System.Drawing.Point(4, 4);
+            this.metroTabPage2.Name = "metroTabPage2";
+            this.metroTabPage2.Size = new System.Drawing.Size(893, 388);
+            this.metroTabPage2.TabIndex = 1;
+            this.metroTabPage2.Text = "Öğrenci Ara";
+            this.metroTabPage2.VerticalScrollbarBarColor = true;
+            this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage2.VerticalScrollbarSize = 10;
             // 
-            // metroTabPage3
+            // aramaBilgiPaneli
             // 
-            this.metroTabPage3.Controls.Add(this.gridOgrenciListesi);
-            this.metroTabPage3.HorizontalScrollbarBarColor = true;
-            this.metroTabPage3.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage3.HorizontalScrollbarSize = 10;
-            this.metroTabPage3.Location = new System.Drawing.Point(4, 4);
-            this.metroTabPage3.Name = "metroTabPage3";
-            this.metroTabPage3.Size = new System.Drawing.Size(914, 388);
-            this.metroTabPage3.TabIndex = 2;
-            this.metroTabPage3.Text = "Öğrenci Listesi";
-            this.metroTabPage3.VerticalScrollbarBarColor = true;
-            this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage3.VerticalScrollbarSize = 10;
+            this.aramaBilgiPaneli.Controls.Add(this.lAramaBilgi);
+            this.aramaBilgiPaneli.HorizontalScrollbarBarColor = true;
+            this.aramaBilgiPaneli.HorizontalScrollbarHighlightOnWheel = false;
+            this.aramaBilgiPaneli.HorizontalScrollbarSize = 10;
+            this.aramaBilgiPaneli.Location = new System.Drawing.Point(627, 261);
+            this.aramaBilgiPaneli.Name = "aramaBilgiPaneli";
+            this.aramaBilgiPaneli.Size = new System.Drawing.Size(232, 83);
+            this.aramaBilgiPaneli.TabIndex = 8;
+            this.aramaBilgiPaneli.VerticalScrollbarBarColor = true;
+            this.aramaBilgiPaneli.VerticalScrollbarHighlightOnWheel = false;
+            this.aramaBilgiPaneli.VerticalScrollbarSize = 10;
+            this.aramaBilgiPaneli.Visible = false;
+            this.aramaBilgiPaneli.VisibleChanged += new System.EventHandler(this.AramaBilgiPaneli_VisibleChanged);
             // 
-            // gridOgrenciListesi
+            // lAramaBilgi
             // 
-            this.gridOgrenciListesi.AllowUserToAddRows = false;
-            this.gridOgrenciListesi.AllowUserToDeleteRows = false;
-            this.gridOgrenciListesi.AllowUserToResizeColumns = false;
-            this.gridOgrenciListesi.AllowUserToResizeRows = false;
-            this.gridOgrenciListesi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridOgrenciListesi.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.gridOgrenciListesi.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gridOgrenciListesi.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.gridOgrenciListesi.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lAramaBilgi.AutoSize = true;
+            this.lAramaBilgi.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.lAramaBilgi.ForeColor = System.Drawing.Color.Green;
+            this.lAramaBilgi.Location = new System.Drawing.Point(9, 54);
+            this.lAramaBilgi.Name = "lAramaBilgi";
+            this.lAramaBilgi.Size = new System.Drawing.Size(94, 19);
+            this.lAramaBilgi.TabIndex = 6;
+            this.lAramaBilgi.Text = "metroLabel5";
+            this.lAramaBilgi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lAramaBilgi.UseCustomForeColor = true;
+            // 
+            // gridArananOgrenciler
+            // 
+            this.gridArananOgrenciler.AllowUserToAddRows = false;
+            this.gridArananOgrenciler.AllowUserToDeleteRows = false;
+            this.gridArananOgrenciler.AllowUserToResizeColumns = false;
+            this.gridArananOgrenciler.AllowUserToResizeRows = false;
+            this.gridArananOgrenciler.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.gridArananOgrenciler.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.gridArananOgrenciler.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(219)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridOgrenciListesi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.gridOgrenciListesi.ColumnHeadersHeight = 30;
-            this.gridOgrenciListesi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.gridOgrenciListesi.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.gridArananOgrenciler.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridArananOgrenciler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(219)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridOgrenciListesi.DefaultCellStyle = dataGridViewCellStyle2;
-            this.gridOgrenciListesi.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.gridOgrenciListesi.EnableHeadersVisualStyles = false;
-            this.gridOgrenciListesi.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.gridOgrenciListesi.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.gridOgrenciListesi.Location = new System.Drawing.Point(57, 27);
-            this.gridOgrenciListesi.Name = "gridOgrenciListesi";
-            this.gridOgrenciListesi.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.gridArananOgrenciler.DefaultCellStyle = dataGridViewCellStyle2;
+            this.gridArananOgrenciler.EnableHeadersVisualStyles = false;
+            this.gridArananOgrenciler.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.gridArananOgrenciler.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.gridArananOgrenciler.Location = new System.Drawing.Point(66, 66);
+            this.gridArananOgrenciler.MultiSelect = false;
+            this.gridArananOgrenciler.Name = "gridArananOgrenciler";
+            this.gridArananOgrenciler.ReadOnly = true;
+            this.gridArananOgrenciler.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(219)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridOgrenciListesi.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.gridOgrenciListesi.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.gridOgrenciListesi.RowTemplate.ReadOnly = true;
-            this.gridOgrenciListesi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridOgrenciListesi.Size = new System.Drawing.Size(776, 324);
-            this.gridOgrenciListesi.Style = MetroFramework.MetroColorStyle.Lime;
-            this.gridOgrenciListesi.TabIndex = 2;
+            this.gridArananOgrenciler.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.gridArananOgrenciler.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.gridArananOgrenciler.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.gridArananOgrenciler.ShowEditingIcon = false;
+            this.gridArananOgrenciler.ShowRowErrors = false;
+            this.gridArananOgrenciler.Size = new System.Drawing.Size(524, 268);
+            this.gridArananOgrenciler.TabIndex = 5;
+            // 
+            // btnOgrenciAra
+            // 
+            this.btnOgrenciAra.Location = new System.Drawing.Point(636, 135);
+            this.btnOgrenciAra.Name = "btnOgrenciAra";
+            this.btnOgrenciAra.Size = new System.Drawing.Size(223, 29);
+            this.btnOgrenciAra.TabIndex = 2;
+            this.btnOgrenciAra.Text = "ARA";
+            this.btnOgrenciAra.UseSelectable = true;
+            this.btnOgrenciAra.Click += new System.EventHandler(this.BtnOgrenciAra_Click);
+            // 
+            // tbAranacakMetin
+            // 
+            // 
+            // 
+            // 
+            this.tbAranacakMetin.CustomButton.Image = null;
+            this.tbAranacakMetin.CustomButton.Location = new System.Drawing.Point(197, 2);
+            this.tbAranacakMetin.CustomButton.Name = "";
+            this.tbAranacakMetin.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.tbAranacakMetin.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.tbAranacakMetin.CustomButton.TabIndex = 1;
+            this.tbAranacakMetin.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.tbAranacakMetin.CustomButton.UseSelectable = true;
+            this.tbAranacakMetin.CustomButton.Visible = false;
+            this.tbAranacakMetin.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.tbAranacakMetin.Lines = new string[0];
+            this.tbAranacakMetin.Location = new System.Drawing.Point(636, 101);
+            this.tbAranacakMetin.MaxLength = 32767;
+            this.tbAranacakMetin.Name = "tbAranacakMetin";
+            this.tbAranacakMetin.PasswordChar = '\0';
+            this.tbAranacakMetin.PromptText = "Ara.....";
+            this.tbAranacakMetin.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.tbAranacakMetin.SelectedText = "";
+            this.tbAranacakMetin.SelectionLength = 0;
+            this.tbAranacakMetin.SelectionStart = 0;
+            this.tbAranacakMetin.ShortcutsEnabled = true;
+            this.tbAranacakMetin.Size = new System.Drawing.Size(223, 28);
+            this.tbAranacakMetin.TabIndex = 1;
+            this.tbAranacakMetin.UseSelectable = true;
+            this.tbAranacakMetin.WaterMark = "Ara.....";
+            this.tbAranacakMetin.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.tbAranacakMetin.WaterMarkFont = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // cbNeyeGore
+            // 
+            this.cbNeyeGore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbNeyeGore.FormattingEnabled = true;
+            this.cbNeyeGore.ItemHeight = 23;
+            this.cbNeyeGore.Items.AddRange(new object[] {
+            "TC Kimlik No",
+            "Ad",
+            "Soyad",
+            "Öğrenci No"});
+            this.cbNeyeGore.Location = new System.Drawing.Point(636, 66);
+            this.cbNeyeGore.MaxDropDownItems = 4;
+            this.cbNeyeGore.Name = "cbNeyeGore";
+            this.cbNeyeGore.PromptText = "Neye göre";
+            this.cbNeyeGore.Size = new System.Drawing.Size(223, 29);
+            this.cbNeyeGore.TabIndex = 0;
+            this.cbNeyeGore.UseSelectable = true;
             // 
             // metroTabPage1
             // 
+            this.metroTabPage1.Controls.Add(this.bildirimPaneli);
             this.metroTabPage1.Controls.Add(this.btnEkle);
             this.metroTabPage1.Controls.Add(this.metroLabel4);
             this.metroTabPage1.Controls.Add(this.tbOgrenciNo);
@@ -173,7 +247,7 @@
             this.metroTabPage1.HorizontalScrollbarSize = 10;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 4);
             this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(914, 388);
+            this.metroTabPage1.Size = new System.Drawing.Size(893, 388);
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "Yeni Öğrenci Ekle";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
@@ -182,13 +256,14 @@
             // 
             // btnEkle
             // 
+            this.btnEkle.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.btnEkle.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btnEkle.Location = new System.Drawing.Point(663, 80);
             this.btnEkle.Name = "btnEkle";
             this.btnEkle.Size = new System.Drawing.Size(132, 161);
             this.btnEkle.Style = MetroFramework.MetroColorStyle.Green;
             this.btnEkle.TabIndex = 4;
-            this.btnEkle.Text = "+";
+            this.btnEkle.Text = "Yeni Öğrenci Ekle";
             this.btnEkle.UseSelectable = true;
             this.btnEkle.Click += new System.EventHandler(this.BtnEkle_Click);
             // 
@@ -354,214 +429,145 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = global::OgrenciKayitSistemi.Properties.Resources.Blank_Club_Website_Avatar_Gray;
+            this.pictureBox1.InitialImage = global::OgrenciKayitSistemi.Properties.Resources.Blank_Club_Website_Avatar_Gray;
             this.pictureBox1.Location = new System.Drawing.Point(78, 64);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(139, 190);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // metroTabPage2
+            // metroTabPage3
             // 
-            this.metroTabPage2.Controls.Add(this.metroButton2);
-            this.metroTabPage2.Controls.Add(this.metroButton1);
-            this.metroTabPage2.Controls.Add(this.metroPanel2);
-            this.metroTabPage2.Controls.Add(this.metroPanel1);
-            this.metroTabPage2.Controls.Add(this.btnOgrenciAra);
-            this.metroTabPage2.Controls.Add(this.metroTextBox1);
-            this.metroTabPage2.Controls.Add(this.metroComboBox1);
-            this.metroTabPage2.HorizontalScrollbarBarColor = true;
-            this.metroTabPage2.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.HorizontalScrollbarSize = 10;
-            this.metroTabPage2.Location = new System.Drawing.Point(4, 4);
-            this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(914, 388);
-            this.metroTabPage2.TabIndex = 1;
-            this.metroTabPage2.Text = "Öğrenci Ara";
-            this.metroTabPage2.VerticalScrollbarBarColor = true;
-            this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.VerticalScrollbarSize = 10;
+            this.metroTabPage3.Controls.Add(this.gridOgrenciListesi);
+            this.metroTabPage3.HorizontalScrollbarBarColor = true;
+            this.metroTabPage3.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage3.HorizontalScrollbarSize = 10;
+            this.metroTabPage3.Location = new System.Drawing.Point(4, 4);
+            this.metroTabPage3.Name = "metroTabPage3";
+            this.metroTabPage3.Size = new System.Drawing.Size(893, 388);
+            this.metroTabPage3.TabIndex = 2;
+            this.metroTabPage3.Text = "Öğrenci Listesi";
+            this.metroTabPage3.VerticalScrollbarBarColor = true;
+            this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage3.VerticalScrollbarSize = 10;
             // 
-            // metroButton2
+            // gridOgrenciListesi
             // 
-            this.metroButton2.Location = new System.Drawing.Point(798, 341);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(28, 30);
-            this.metroButton2.TabIndex = 6;
-            this.metroButton2.Text = ">";
-            this.metroButton2.UseSelectable = true;
+            this.gridOgrenciListesi.AllowUserToAddRows = false;
+            this.gridOgrenciListesi.AllowUserToDeleteRows = false;
+            this.gridOgrenciListesi.AllowUserToResizeColumns = false;
+            this.gridOgrenciListesi.AllowUserToResizeRows = false;
+            this.gridOgrenciListesi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridOgrenciListesi.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.gridOgrenciListesi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridOgrenciListesi.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.gridOgrenciListesi.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(219)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridOgrenciListesi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.gridOgrenciListesi.ColumnHeadersHeight = 30;
+            this.gridOgrenciListesi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.gridOgrenciListesi.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(219)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridOgrenciListesi.DefaultCellStyle = dataGridViewCellStyle5;
+            this.gridOgrenciListesi.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.gridOgrenciListesi.EnableHeadersVisualStyles = false;
+            this.gridOgrenciListesi.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.gridOgrenciListesi.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.gridOgrenciListesi.Location = new System.Drawing.Point(57, 27);
+            this.gridOgrenciListesi.Name = "gridOgrenciListesi";
+            this.gridOgrenciListesi.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(219)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridOgrenciListesi.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.gridOgrenciListesi.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.gridOgrenciListesi.RowTemplate.ReadOnly = true;
+            this.gridOgrenciListesi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridOgrenciListesi.Size = new System.Drawing.Size(754, 324);
+            this.gridOgrenciListesi.Style = MetroFramework.MetroColorStyle.Lime;
+            this.gridOgrenciListesi.TabIndex = 2;
             // 
-            // metroButton1
+            // yeniKullaniciEkle
             // 
-            this.metroButton1.Location = new System.Drawing.Point(764, 341);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(28, 30);
-            this.metroButton1.TabIndex = 5;
-            this.metroButton1.Text = "<";
-            this.metroButton1.UseSelectable = true;
+            this.yeniKullaniciEkle.Alignment = System.Windows.Forms.TabAlignment.Bottom;
+            this.yeniKullaniciEkle.Controls.Add(this.metroTabPage3);
+            this.yeniKullaniciEkle.Controls.Add(this.metroTabPage1);
+            this.yeniKullaniciEkle.Controls.Add(this.metroTabPage2);
+            this.yeniKullaniciEkle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.yeniKullaniciEkle.Location = new System.Drawing.Point(5, 60);
+            this.yeniKullaniciEkle.Multiline = true;
+            this.yeniKullaniciEkle.Name = "yeniKullaniciEkle";
+            this.yeniKullaniciEkle.SelectedIndex = 2;
+            this.yeniKullaniciEkle.Size = new System.Drawing.Size(901, 430);
+            this.yeniKullaniciEkle.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
+            this.yeniKullaniciEkle.Style = MetroFramework.MetroColorStyle.Green;
+            this.yeniKullaniciEkle.TabIndex = 0;
+            this.yeniKullaniciEkle.UseSelectable = true;
             // 
-            // metroPanel2
+            // bildirimYoket
             // 
-            this.metroPanel2.Controls.Add(this.pictureBox3);
-            this.metroPanel2.Controls.Add(this.metroLabel9);
-            this.metroPanel2.HorizontalScrollbarBarColor = true;
-            this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel2.HorizontalScrollbarSize = 10;
-            this.metroPanel2.Location = new System.Drawing.Point(66, 87);
-            this.metroPanel2.Name = "metroPanel2";
-            this.metroPanel2.Size = new System.Drawing.Size(243, 247);
-            this.metroPanel2.TabIndex = 4;
-            this.metroPanel2.VerticalScrollbarBarColor = true;
-            this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel2.VerticalScrollbarSize = 10;
+            this.bildirimYoket.Interval = 2000;
+            this.bildirimYoket.Tick += new System.EventHandler(this.BildirimYoket_Tick);
             // 
-            // pictureBox3
+            // bildirimPaneli
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(60, 33);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(129, 131);
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
+            this.bildirimPaneli.Controls.Add(this.lbildirim);
+            this.bildirimPaneli.HorizontalScrollbarBarColor = true;
+            this.bildirimPaneli.HorizontalScrollbarHighlightOnWheel = false;
+            this.bildirimPaneli.HorizontalScrollbarSize = 10;
+            this.bildirimPaneli.Location = new System.Drawing.Point(350, 335);
+            this.bildirimPaneli.Name = "bildirimPaneli";
+            this.bildirimPaneli.Size = new System.Drawing.Size(445, 30);
+            this.bildirimPaneli.TabIndex = 11;
+            this.bildirimPaneli.VerticalScrollbarBarColor = true;
+            this.bildirimPaneli.VerticalScrollbarHighlightOnWheel = false;
+            this.bildirimPaneli.VerticalScrollbarSize = 10;
+            this.bildirimPaneli.Visible = false;
+            this.bildirimPaneli.VisibleChanged += new System.EventHandler(this.BildirimPaneli_VisibleChanged);
             // 
-            // metroLabel9
+            // lbildirim
             // 
-            this.metroLabel9.AutoSize = true;
-            this.metroLabel9.Location = new System.Drawing.Point(68, 196);
-            this.metroLabel9.Name = "metroLabel9";
-            this.metroLabel9.Size = new System.Drawing.Size(121, 19);
-            this.metroLabel9.TabIndex = 2;
-            this.metroLabel9.Text = "5 Öğrenci Bulundu.";
+            this.lbildirim.AutoSize = true;
+            this.lbildirim.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lbildirim.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.lbildirim.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lbildirim.Location = new System.Drawing.Point(12, 0);
+            this.lbildirim.Name = "lbildirim";
+            this.lbildirim.Size = new System.Drawing.Size(77, 25);
+            this.lbildirim.Style = MetroFramework.MetroColorStyle.Green;
+            this.lbildirim.TabIndex = 6;
+            this.lbildirim.Text = "bildirim";
+            this.lbildirim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbildirim.UseCustomForeColor = true;
             // 
-            // metroPanel1
+            // aramaBilgiYoket
             // 
-            this.metroPanel1.Controls.Add(this.metroLabel5);
-            this.metroPanel1.Controls.Add(this.metroLabel6);
-            this.metroPanel1.Controls.Add(this.metroLabel7);
-            this.metroPanel1.Controls.Add(this.metroLabel8);
-            this.metroPanel1.Controls.Add(this.pictureBox2);
-            this.metroPanel1.HorizontalScrollbarBarColor = true;
-            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(315, 87);
-            this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(510, 248);
-            this.metroPanel1.TabIndex = 3;
-            this.metroPanel1.VerticalScrollbarBarColor = true;
-            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 10;
-            // 
-            // metroLabel5
-            // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(209, 177);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(85, 19);
-            this.metroLabel5.TabIndex = 15;
-            this.metroLabel5.Text = "Öğrenci No :";
-            this.metroLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // metroLabel6
-            // 
-            this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(242, 129);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(52, 19);
-            this.metroLabel6.TabIndex = 14;
-            this.metroLabel6.Text = "Soyad :";
-            this.metroLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // metroLabel7
-            // 
-            this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(261, 81);
-            this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(33, 19);
-            this.metroLabel7.TabIndex = 13;
-            this.metroLabel7.Text = "Ad :";
-            this.metroLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // metroLabel8
-            // 
-            this.metroLabel8.AutoSize = true;
-            this.metroLabel8.Location = new System.Drawing.Point(203, 33);
-            this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(91, 19);
-            this.metroLabel8.TabIndex = 12;
-            this.metroLabel8.Text = "TC Kimlik No :";
-            this.metroLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(37, 25);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(139, 190);
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
-            // 
-            // btnOgrenciAra
-            // 
-            this.btnOgrenciAra.Location = new System.Drawing.Point(732, 31);
-            this.btnOgrenciAra.Name = "btnOgrenciAra";
-            this.btnOgrenciAra.Size = new System.Drawing.Size(93, 28);
-            this.btnOgrenciAra.TabIndex = 2;
-            this.btnOgrenciAra.Text = "ARA";
-            this.btnOgrenciAra.UseSelectable = true;
-            // 
-            // metroTextBox1
-            // 
-            // 
-            // 
-            // 
-            this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(439, 2);
-            this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(23, 23);
-            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox1.CustomButton.TabIndex = 1;
-            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox1.CustomButton.UseSelectable = true;
-            this.metroTextBox1.CustomButton.Visible = false;
-            this.metroTextBox1.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(261, 32);
-            this.metroTextBox1.MaxLength = 32767;
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.PromptText = "Ara.....";
-            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.SelectionLength = 0;
-            this.metroTextBox1.SelectionStart = 0;
-            this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(465, 28);
-            this.metroTextBox1.TabIndex = 1;
-            this.metroTextBox1.UseSelectable = true;
-            this.metroTextBox1.WaterMark = "Ara.....";
-            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroComboBox1
-            // 
-            this.metroComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Items.AddRange(new object[] {
-            "TC Kimlik No",
-            "Ad",
-            "Soyad",
-            "Öğrenci No"});
-            this.metroComboBox1.Location = new System.Drawing.Point(66, 31);
-            this.metroComboBox1.MaxDropDownItems = 4;
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.PromptText = "Neye göre";
-            this.metroComboBox1.Size = new System.Drawing.Size(189, 29);
-            this.metroComboBox1.TabIndex = 0;
-            this.metroComboBox1.UseSelectable = true;
+            this.aramaBilgiYoket.Interval = 2000;
+            this.aramaBilgiYoket.Tick += new System.EventHandler(this.AramaBilgiYoket_Tick);
             // 
             // anaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(932, 490);
+            this.ClientSize = new System.Drawing.Size(911, 490);
             this.Controls.Add(this.yeniKullaniciEkle);
             this.MaximizeBox = false;
             this.Name = "anaForm";
@@ -572,27 +578,30 @@
             this.Text = "Öğrenci Kayıt Sistemi";
             this.TransparencyKey = System.Drawing.SystemColors.InactiveCaption;
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.yeniKullaniciEkle.ResumeLayout(false);
-            this.metroTabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridOgrenciListesi)).EndInit();
+            this.metroTabPage2.ResumeLayout(false);
+            this.aramaBilgiPaneli.ResumeLayout(false);
+            this.aramaBilgiPaneli.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridArananOgrenciler)).EndInit();
             this.metroTabPage1.ResumeLayout(false);
             this.metroTabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.metroTabPage2.ResumeLayout(false);
-            this.metroPanel2.ResumeLayout(false);
-            this.metroPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.metroPanel1.ResumeLayout(false);
-            this.metroPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.metroTabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridOgrenciListesi)).EndInit();
+            this.yeniKullaniciEkle.ResumeLayout(false);
+            this.bildirimPaneli.ResumeLayout(false);
+            this.bildirimPaneli.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private MetroFramework.Controls.MetroTabPage metroTabPage1;
+
         private MetroFramework.Controls.MetroTabPage metroTabPage2;
-        private MetroFramework.Controls.MetroTabPage metroTabPage3;
+        private MetroFramework.Controls.MetroButton btnOgrenciAra;
+        private MetroFramework.Controls.MetroTextBox tbAranacakMetin;
+        private MetroFramework.Controls.MetroComboBox cbNeyeGore;
+        private MetroFramework.Controls.MetroTabPage metroTabPage1;
+        private MetroFramework.Controls.MetroButton btnEkle;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroTextBox tbOgrenciNo;
         private MetroFramework.Controls.MetroLabel metroLabel3;
@@ -602,23 +611,16 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroTextBox tbAd;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private MetroFramework.Controls.MetroButton btnOgrenciAra;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
-        private MetroFramework.Controls.MetroButton btnEkle;
+        private MetroFramework.Controls.MetroTabPage metroTabPage3;
         private MetroFramework.Controls.MetroGrid gridOgrenciListesi;
         private MetroFramework.Controls.MetroTabControl yeniKullaniciEkle;
-        private MetroFramework.Controls.MetroPanel metroPanel1;
-        private MetroFramework.Controls.MetroLabel metroLabel5;
-        private MetroFramework.Controls.MetroLabel metroLabel6;
-        private MetroFramework.Controls.MetroLabel metroLabel7;
-        private MetroFramework.Controls.MetroLabel metroLabel8;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private MetroFramework.Controls.MetroPanel metroPanel2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private MetroFramework.Controls.MetroLabel metroLabel9;
-        private MetroFramework.Controls.MetroButton metroButton2;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroGrid gridArananOgrenciler;
+        private MetroFramework.Controls.MetroPanel aramaBilgiPaneli;
+        private MetroFramework.Controls.MetroLabel lAramaBilgi;
+        private System.Windows.Forms.Timer bildirimYoket;
+        private MetroFramework.Controls.MetroPanel bildirimPaneli;
+        private MetroFramework.Controls.MetroLabel lbildirim;
+        private System.Windows.Forms.Timer aramaBilgiYoket;
     }
 }
 
