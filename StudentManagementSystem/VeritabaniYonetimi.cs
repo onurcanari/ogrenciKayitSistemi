@@ -8,14 +8,9 @@ public class VeritabaniYonetimi
 {
     SQLiteDataAdapter dat;
     SQLiteConnection con;
-    DataSet dataSet;
-    MetroGrid arananOgrenciListesi;
-    MetroGrid ogrenciListesi;
 
-    public VeritabaniYonetimi(MetroGrid ogrenciListesi, MetroGrid arananOgrenciListesi)
+    public VeritabaniYonetimi()
     {
-        this.ogrenciListesi = ogrenciListesi;
-        this.arananOgrenciListesi = arananOgrenciListesi;
         // Veritabani dosyamız yoksa oluşturuyor. Ardından içinde tablo oluşturuyor.
         if (!File.Exists("veritabani.sqlite"))
             VeritabaniOlustur();
@@ -69,26 +64,32 @@ public class VeritabaniYonetimi
         }
         con.Close();
     }
-    public void KayitlariListele()
+    public DataTable KayitlariListele()
     {
+        DataSet dataSet = new DataSet();
         string sql = "SELECT * FROM Ogrenciler;";
         con.Open();
         dat = new SQLiteDataAdapter(sql, con);
-        dataSet = new DataSet();
         dat.Fill(dataSet, "Ogrenciler");
-        ogrenciListesi.DataSource = dataSet.Tables["Ogrenciler"];
         con.Close();
+        return dataSet.Tables["Ogrenciler"];
     }
 
-    public void KayitAra(string neyeGore, string ara)
+    public DataTable KayitAra(string neyeGore, string ara)
     {
+        DataSet dataSet = new DataSet();
         con.Open();
-        string sql = "SELECT TCKimlikNo,Ad,Soyad,OgrenciNo FROM Ogrenciler WHERE " + neyeGore + "='" + ara + "'";
-        dat = new SQLiteDataAdapter(sql, con);
-        dataSet = new DataSet();
-        dat.Fill(dataSet, "Ogrenciler");
-        arananOgrenciListesi.DataSource = dataSet.Tables["Ogrenciler"];
+        using(SQLiteCommand com = new SQLiteCommand(con))
+        {
+            com.CommandText = string.Format(com.CommandText = "SELECT TCKimlikNo,Ad,Soyad,OgrenciNo FROM Ogrenciler WHERE {0} ='{1}'", neyeGore, ara);
+            //com.CommandText = "SELECT TCKimlikNo,Ad,Soyad,OgrenciNo FROM Ogrenciler WHERE Ad ='@Ara'";
+            //com.Parameters.AddWithValue("@NeyeGore", neyeGore);
+            //com.Parameters.AddWithValue("@Ara", ara);
+            dat = new SQLiteDataAdapter(com);
+            dat.Fill(dataSet, "Ogrenciler");
+        }
         con.Close();
+        return dataSet.Tables["Ogrenciler"];
     }
 
 }

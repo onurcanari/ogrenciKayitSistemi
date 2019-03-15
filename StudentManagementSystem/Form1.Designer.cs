@@ -57,7 +57,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.gridOgrenciListesi = new MetroFramework.Controls.MetroGrid();
-            this.yeniKullaniciEkle = new MetroFramework.Controls.MetroTabControl();
+            this.tabMain = new MetroFramework.Controls.MetroTabControl();
             this.bildirimYoket = new System.Windows.Forms.Timer(this.components);
             this.aramaBilgiYoket = new System.Windows.Forms.Timer(this.components);
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,7 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.metroTabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridOgrenciListesi)).BeginInit();
-            this.yeniKullaniciEkle.SuspendLayout();
+            this.tabMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroTabPage2
@@ -506,7 +506,7 @@
             this.gridOgrenciListesi.AllowUserToResizeColumns = false;
             this.gridOgrenciListesi.AllowUserToResizeRows = false;
             this.gridOgrenciListesi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridOgrenciListesi.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.gridOgrenciListesi.BackgroundColor = System.Drawing.Color.Honeydew;
             this.gridOgrenciListesi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridOgrenciListesi.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.gridOgrenciListesi.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -518,7 +518,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gridOgrenciListesi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.gridOgrenciListesi.ColumnHeadersHeight = 30;
+            this.gridOgrenciListesi.ColumnHeadersHeight = 20;
             this.gridOgrenciListesi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.gridOgrenciListesi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -551,28 +551,31 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gridOgrenciListesi.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.gridOgrenciListesi.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.gridOgrenciListesi.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.Honeydew;
+            this.gridOgrenciListesi.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
             this.gridOgrenciListesi.RowTemplate.ReadOnly = true;
             this.gridOgrenciListesi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridOgrenciListesi.Size = new System.Drawing.Size(754, 324);
             this.gridOgrenciListesi.Style = MetroFramework.MetroColorStyle.Lime;
             this.gridOgrenciListesi.TabIndex = 2;
+            this.gridOgrenciListesi.UseCustomBackColor = true;
             // 
-            // yeniKullaniciEkle
+            // tabMain
             // 
-            this.yeniKullaniciEkle.Alignment = System.Windows.Forms.TabAlignment.Bottom;
-            this.yeniKullaniciEkle.Controls.Add(this.metroTabPage3);
-            this.yeniKullaniciEkle.Controls.Add(this.metroTabPage1);
-            this.yeniKullaniciEkle.Controls.Add(this.metroTabPage2);
-            this.yeniKullaniciEkle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.yeniKullaniciEkle.Location = new System.Drawing.Point(5, 60);
-            this.yeniKullaniciEkle.Multiline = true;
-            this.yeniKullaniciEkle.Name = "yeniKullaniciEkle";
-            this.yeniKullaniciEkle.SelectedIndex = 0;
-            this.yeniKullaniciEkle.Size = new System.Drawing.Size(901, 430);
-            this.yeniKullaniciEkle.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
-            this.yeniKullaniciEkle.Style = MetroFramework.MetroColorStyle.Green;
-            this.yeniKullaniciEkle.TabIndex = 0;
-            this.yeniKullaniciEkle.UseSelectable = true;
+            this.tabMain.Alignment = System.Windows.Forms.TabAlignment.Bottom;
+            this.tabMain.Controls.Add(this.metroTabPage3);
+            this.tabMain.Controls.Add(this.metroTabPage1);
+            this.tabMain.Controls.Add(this.metroTabPage2);
+            this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabMain.Location = new System.Drawing.Point(5, 60);
+            this.tabMain.Multiline = true;
+            this.tabMain.Name = "tabMain";
+            this.tabMain.SelectedIndex = 0;
+            this.tabMain.Size = new System.Drawing.Size(901, 430);
+            this.tabMain.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
+            this.tabMain.Style = MetroFramework.MetroColorStyle.Green;
+            this.tabMain.TabIndex = 0;
+            this.tabMain.UseSelectable = true;
             // 
             // bildirimYoket
             // 
@@ -614,7 +617,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(911, 490);
-            this.Controls.Add(this.yeniKullaniciEkle);
+            this.Controls.Add(this.tabMain);
             this.MaximizeBox = false;
             this.Name = "anaForm";
             this.Padding = new System.Windows.Forms.Padding(5, 60, 5, 0);
@@ -635,7 +638,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.metroTabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridOgrenciListesi)).EndInit();
-            this.yeniKullaniciEkle.ResumeLayout(false);
+            this.tabMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -659,7 +662,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private MetroFramework.Controls.MetroTabPage metroTabPage3;
         private MetroFramework.Controls.MetroGrid gridOgrenciListesi;
-        private MetroFramework.Controls.MetroTabControl yeniKullaniciEkle;
+        private MetroFramework.Controls.MetroTabControl tabMain;
         private MetroFramework.Controls.MetroGrid gridArananOgrenciler;
         private MetroFramework.Controls.MetroPanel aramaBilgiPaneli;
         private MetroFramework.Controls.MetroLabel lAramaBilgi;
