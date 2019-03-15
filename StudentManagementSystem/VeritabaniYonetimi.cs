@@ -2,11 +2,12 @@
 using System.Data;
 using System.Data.SQLite;
 using System.IO;
+using System.Windows.Forms;
+
 public class VeritabaniYonetimi
 {
     SQLiteDataAdapter dat;
     SQLiteConnection con;
-    SQLiteCommand com;
     DataSet dataSet;
     MetroGrid arananOgrenciListesi;
     MetroGrid ogrenciListesi;
@@ -31,23 +32,46 @@ public class VeritabaniYonetimi
                        OgrenciNo        TEXT        NOT NULL
                        );";
         con.Open();
-        com = new SQLiteCommand(sql, con);
+        SQLiteCommand com = new SQLiteCommand(sql, con);
         com.ExecuteNonQuery();
         con.Close();
     }
 
     public void YeniKayitEkle(Ogrenci ogrenci)
     {
-        string sql = "INSERT into Ogrenciler(TCKimlikNo,Ad,Soyad,OgrenciNo) " +
-            "VALUES('" + ogrenci.tcKimlikNo + "','" + ogrenci.ad + "','" + ogrenci.soyad + "','" + ogrenci.ogrenciNo + "')";
-        com = new SQLiteCommand(sql, con);
         con.Open();
-        com.ExecuteNonQuery();
+        string sqlSelect = "SELECT TCKimlikNo,Ad,Soyad,OgrenciNo FROM Ogrenciler WHERE TCKimlikNo=@TCKimlikNo OR OgrenciNo=@OgrenciNo";
+        SQLiteCommand selectCommand = new SQLiteCommand(sqlSelect, con);
+        selectCommand.Parameters.AddWithValue("@TCKimlikNo", ogrenci.tcKimlikNo);
+        selectCommand.Parameters.AddWithValue("@OgrenciNo", ogrenci.ogrenciNo);
+        SQLiteDataReader dataReader = selectCommand.ExecuteReader();
+        bool studentExist = dataReader.Read();
+        // Girilen tckimlikno ile öğrenci no yu kontrol et eğer bir kayda ulaşırsan ekleme
+        if (studentExist)
+        {
+
+        }else 
+        {
+            using (SQLiteTransaction liteTransaction = con.BeginTransaction())
+            {
+                using (SQLiteCommand com = new SQLiteCommand(con))
+                {
+                    string sqlInsert = "INSERT INTO Ogrenciler(TCKimlikNo,Ad,Soyad,OgrenciNo) VALUES(@TCKimlikNo, @Ad, @Soyad, @OgrenciNo)";
+                    com.CommandText = sqlInsert;
+                    com.Parameters.AddWithValue("@TCKimlikNo", ogrenci.tcKimlikNo);
+                    com.Parameters.AddWithValue("@Ad", ogrenci.ad);
+                    com.Parameters.AddWithValue("@Soyad", ogrenci.soyad);
+                    com.Parameters.AddWithValue("@OgrenciNo", ogrenci.ogrenciNo);
+                    com.ExecuteNonQuery();
+                }
+                liteTransaction.Commit();
+            }
+        }
         con.Close();
     }
     public void KayitlariListele()
     {
-        string sql = "SELECT TCKimlikNo,Ad,Soyad,OgrenciNo From Ogrenciler;";
+        string sql = "SELECT * FROM Ogrenciler;";
         con.Open();
         dat = new SQLiteDataAdapter(sql, con);
         dataSet = new DataSet();

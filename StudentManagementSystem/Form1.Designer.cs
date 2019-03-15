@@ -43,6 +43,8 @@
             this.tbAranacakMetin = new MetroFramework.Controls.MetroTextBox();
             this.cbNeyeGore = new MetroFramework.Controls.MetroComboBox();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.bildirimPaneli = new MetroFramework.Controls.MetroPanel();
+            this.lbildirim = new MetroFramework.Controls.MetroLabel();
             this.btnEkle = new MetroFramework.Controls.MetroButton();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.tbOgrenciNo = new MetroFramework.Controls.MetroTextBox();
@@ -57,18 +59,21 @@
             this.gridOgrenciListesi = new MetroFramework.Controls.MetroGrid();
             this.yeniKullaniciEkle = new MetroFramework.Controls.MetroTabControl();
             this.bildirimYoket = new System.Windows.Forms.Timer(this.components);
-            this.bildirimPaneli = new MetroFramework.Controls.MetroPanel();
-            this.lbildirim = new MetroFramework.Controls.MetroLabel();
             this.aramaBilgiYoket = new System.Windows.Forms.Timer(this.components);
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroTabPage2.SuspendLayout();
             this.aramaBilgiPaneli.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridArananOgrenciler)).BeginInit();
             this.metroTabPage1.SuspendLayout();
+            this.bildirimPaneli.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.metroTabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridOgrenciListesi)).BeginInit();
             this.yeniKullaniciEkle.SuspendLayout();
-            this.bildirimPaneli.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroTabPage2
@@ -126,6 +131,7 @@
             this.gridArananOgrenciler.AllowUserToResizeColumns = false;
             this.gridArananOgrenciler.AllowUserToResizeRows = false;
             this.gridArananOgrenciler.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.gridArananOgrenciler.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridArananOgrenciler.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.gridArananOgrenciler.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -163,6 +169,7 @@
             this.gridArananOgrenciler.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.gridArananOgrenciler.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.gridArananOgrenciler.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.gridArananOgrenciler.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridArananOgrenciler.ShowEditingIcon = false;
             this.gridArananOgrenciler.ShowRowErrors = false;
             this.gridArananOgrenciler.Size = new System.Drawing.Size(524, 268);
@@ -254,6 +261,37 @@
             this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.VerticalScrollbarSize = 10;
             // 
+            // bildirimPaneli
+            // 
+            this.bildirimPaneli.Controls.Add(this.lbildirim);
+            this.bildirimPaneli.HorizontalScrollbarBarColor = true;
+            this.bildirimPaneli.HorizontalScrollbarHighlightOnWheel = false;
+            this.bildirimPaneli.HorizontalScrollbarSize = 10;
+            this.bildirimPaneli.Location = new System.Drawing.Point(350, 335);
+            this.bildirimPaneli.Name = "bildirimPaneli";
+            this.bildirimPaneli.Size = new System.Drawing.Size(445, 30);
+            this.bildirimPaneli.TabIndex = 11;
+            this.bildirimPaneli.VerticalScrollbarBarColor = true;
+            this.bildirimPaneli.VerticalScrollbarHighlightOnWheel = false;
+            this.bildirimPaneli.VerticalScrollbarSize = 10;
+            this.bildirimPaneli.Visible = false;
+            this.bildirimPaneli.VisibleChanged += new System.EventHandler(this.BildirimPaneli_VisibleChanged);
+            // 
+            // lbildirim
+            // 
+            this.lbildirim.AutoSize = true;
+            this.lbildirim.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lbildirim.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.lbildirim.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lbildirim.Location = new System.Drawing.Point(12, 0);
+            this.lbildirim.Name = "lbildirim";
+            this.lbildirim.Size = new System.Drawing.Size(77, 25);
+            this.lbildirim.Style = MetroFramework.MetroColorStyle.Green;
+            this.lbildirim.TabIndex = 6;
+            this.lbildirim.Text = "bildirim";
+            this.lbildirim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbildirim.UseCustomForeColor = true;
+            // 
             // btnEkle
             // 
             this.btnEkle.FontSize = MetroFramework.MetroButtonSize.Medium;
@@ -291,7 +329,8 @@
             this.tbOgrenciNo.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.tbOgrenciNo.CustomButton.UseSelectable = true;
             this.tbOgrenciNo.CustomButton.Visible = false;
-            this.tbOgrenciNo.Lines = new string[0];
+            this.tbOgrenciNo.Lines = new string[] {
+        "76852"};
             this.tbOgrenciNo.Location = new System.Drawing.Point(362, 218);
             this.tbOgrenciNo.MaxLength = 32767;
             this.tbOgrenciNo.Name = "tbOgrenciNo";
@@ -303,6 +342,7 @@
             this.tbOgrenciNo.ShortcutsEnabled = true;
             this.tbOgrenciNo.Size = new System.Drawing.Size(282, 23);
             this.tbOgrenciNo.TabIndex = 3;
+            this.tbOgrenciNo.Text = "76852";
             this.tbOgrenciNo.UseSelectable = true;
             this.tbOgrenciNo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tbOgrenciNo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -331,7 +371,8 @@
             this.tbSoyad.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.tbSoyad.CustomButton.UseSelectable = true;
             this.tbSoyad.CustomButton.Visible = false;
-            this.tbSoyad.Lines = new string[0];
+            this.tbSoyad.Lines = new string[] {
+        "memet"};
             this.tbSoyad.Location = new System.Drawing.Point(362, 170);
             this.tbSoyad.MaxLength = 32767;
             this.tbSoyad.Name = "tbSoyad";
@@ -343,6 +384,7 @@
             this.tbSoyad.ShortcutsEnabled = true;
             this.tbSoyad.Size = new System.Drawing.Size(282, 23);
             this.tbSoyad.TabIndex = 2;
+            this.tbSoyad.Text = "memet";
             this.tbSoyad.UseSelectable = true;
             this.tbSoyad.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tbSoyad.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -371,7 +413,8 @@
             this.tbTcKimlikNo.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.tbTcKimlikNo.CustomButton.UseSelectable = true;
             this.tbTcKimlikNo.CustomButton.Visible = false;
-            this.tbTcKimlikNo.Lines = new string[0];
+            this.tbTcKimlikNo.Lines = new string[] {
+        "12582158"};
             this.tbTcKimlikNo.Location = new System.Drawing.Point(362, 80);
             this.tbTcKimlikNo.MaxLength = 32767;
             this.tbTcKimlikNo.Name = "tbTcKimlikNo";
@@ -383,6 +426,7 @@
             this.tbTcKimlikNo.ShortcutsEnabled = true;
             this.tbTcKimlikNo.Size = new System.Drawing.Size(282, 23);
             this.tbTcKimlikNo.TabIndex = 0;
+            this.tbTcKimlikNo.Text = "12582158";
             this.tbTcKimlikNo.UseSelectable = true;
             this.tbTcKimlikNo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tbTcKimlikNo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -411,7 +455,8 @@
             this.tbAd.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.tbAd.CustomButton.UseSelectable = true;
             this.tbAd.CustomButton.Visible = false;
-            this.tbAd.Lines = new string[0];
+            this.tbAd.Lines = new string[] {
+        "deniz"};
             this.tbAd.Location = new System.Drawing.Point(362, 124);
             this.tbAd.MaxLength = 32767;
             this.tbAd.Name = "tbAd";
@@ -423,6 +468,7 @@
             this.tbAd.ShortcutsEnabled = true;
             this.tbAd.Size = new System.Drawing.Size(282, 23);
             this.tbAd.TabIndex = 1;
+            this.tbAd.Text = "deniz";
             this.tbAd.UseSelectable = true;
             this.tbAd.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tbAd.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -474,6 +520,12 @@
             this.gridOgrenciListesi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.gridOgrenciListesi.ColumnHeadersHeight = 30;
             this.gridOgrenciListesi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.gridOgrenciListesi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
             this.gridOgrenciListesi.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -515,7 +567,7 @@
             this.yeniKullaniciEkle.Location = new System.Drawing.Point(5, 60);
             this.yeniKullaniciEkle.Multiline = true;
             this.yeniKullaniciEkle.Name = "yeniKullaniciEkle";
-            this.yeniKullaniciEkle.SelectedIndex = 2;
+            this.yeniKullaniciEkle.SelectedIndex = 0;
             this.yeniKullaniciEkle.Size = new System.Drawing.Size(901, 430);
             this.yeniKullaniciEkle.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.yeniKullaniciEkle.Style = MetroFramework.MetroColorStyle.Green;
@@ -527,41 +579,35 @@
             this.bildirimYoket.Interval = 2000;
             this.bildirimYoket.Tick += new System.EventHandler(this.BildirimYoket_Tick);
             // 
-            // bildirimPaneli
-            // 
-            this.bildirimPaneli.Controls.Add(this.lbildirim);
-            this.bildirimPaneli.HorizontalScrollbarBarColor = true;
-            this.bildirimPaneli.HorizontalScrollbarHighlightOnWheel = false;
-            this.bildirimPaneli.HorizontalScrollbarSize = 10;
-            this.bildirimPaneli.Location = new System.Drawing.Point(350, 335);
-            this.bildirimPaneli.Name = "bildirimPaneli";
-            this.bildirimPaneli.Size = new System.Drawing.Size(445, 30);
-            this.bildirimPaneli.TabIndex = 11;
-            this.bildirimPaneli.VerticalScrollbarBarColor = true;
-            this.bildirimPaneli.VerticalScrollbarHighlightOnWheel = false;
-            this.bildirimPaneli.VerticalScrollbarSize = 10;
-            this.bildirimPaneli.Visible = false;
-            this.bildirimPaneli.VisibleChanged += new System.EventHandler(this.BildirimPaneli_VisibleChanged);
-            // 
-            // lbildirim
-            // 
-            this.lbildirim.AutoSize = true;
-            this.lbildirim.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lbildirim.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.lbildirim.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbildirim.Location = new System.Drawing.Point(12, 0);
-            this.lbildirim.Name = "lbildirim";
-            this.lbildirim.Size = new System.Drawing.Size(77, 25);
-            this.lbildirim.Style = MetroFramework.MetroColorStyle.Green;
-            this.lbildirim.TabIndex = 6;
-            this.lbildirim.Text = "bildirim";
-            this.lbildirim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbildirim.UseCustomForeColor = true;
-            // 
             // aramaBilgiYoket
             // 
             this.aramaBilgiYoket.Interval = 2000;
             this.aramaBilgiYoket.Tick += new System.EventHandler(this.AramaBilgiYoket_Tick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Column2";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Column3";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Column4";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Column5";
+            this.Column5.Name = "Column5";
             // 
             // anaForm
             // 
@@ -584,12 +630,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridArananOgrenciler)).EndInit();
             this.metroTabPage1.ResumeLayout(false);
             this.metroTabPage1.PerformLayout();
+            this.bildirimPaneli.ResumeLayout(false);
+            this.bildirimPaneli.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.metroTabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridOgrenciListesi)).EndInit();
             this.yeniKullaniciEkle.ResumeLayout(false);
-            this.bildirimPaneli.ResumeLayout(false);
-            this.bildirimPaneli.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -621,6 +667,11 @@
         private MetroFramework.Controls.MetroPanel bildirimPaneli;
         private MetroFramework.Controls.MetroLabel lbildirim;
         private System.Windows.Forms.Timer aramaBilgiYoket;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }
 

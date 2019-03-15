@@ -29,6 +29,7 @@ namespace StudentManagementSystem
 
         private void BtnEkle_Click(object sender, EventArgs e)
         {
+            // eğer boş text varsa bildirim gönder
             if(String.IsNullOrWhiteSpace(tbTcKimlikNo.Text) || String.IsNullOrWhiteSpace(tbAd.Text)
                 || String.IsNullOrWhiteSpace(tbSoyad.Text) || String.IsNullOrWhiteSpace(tbOgrenciNo.Text))
             {
@@ -38,6 +39,7 @@ namespace StudentManagementSystem
                 return;
             }
             ogrenci = new Ogrenci(tbTcKimlikNo.Text, tbAd.Text, tbSoyad.Text, tbOgrenciNo.Text);
+            
             yonet.YeniKayitEkle(ogrenci);
             yonet.KayitlariListele();
             tbTcKimlikNo.Text = tbAd.Text = tbSoyad.Text = tbOgrenciNo.Text = "";
@@ -73,6 +75,7 @@ namespace StudentManagementSystem
                     break;
                 default:
                     lAramaBilgi.Text = "Neye göre?";
+                    aramaBilgiPaneli.Visible = true;
                     break;
             }            
         }
