@@ -39,7 +39,6 @@
             this.aramaBilgiPaneli = new MetroFramework.Controls.MetroPanel();
             this.lAramaBilgi = new MetroFramework.Controls.MetroLabel();
             this.gridArananOgrenciler = new MetroFramework.Controls.MetroGrid();
-            this.btnOgrenciAra = new MetroFramework.Controls.MetroButton();
             this.tbAranacakMetin = new MetroFramework.Controls.MetroTextBox();
             this.cbNeyeGore = new MetroFramework.Controls.MetroComboBox();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
@@ -60,11 +59,6 @@
             this.tabMain = new MetroFramework.Controls.MetroTabControl();
             this.bildirimYoket = new System.Windows.Forms.Timer(this.components);
             this.aramaBilgiYoket = new System.Windows.Forms.Timer(this.components);
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroTabPage2.SuspendLayout();
             this.aramaBilgiPaneli.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridArananOgrenciler)).BeginInit();
@@ -80,7 +74,6 @@
             // 
             this.metroTabPage2.Controls.Add(this.aramaBilgiPaneli);
             this.metroTabPage2.Controls.Add(this.gridArananOgrenciler);
-            this.metroTabPage2.Controls.Add(this.btnOgrenciAra);
             this.metroTabPage2.Controls.Add(this.tbAranacakMetin);
             this.metroTabPage2.Controls.Add(this.cbNeyeGore);
             this.metroTabPage2.HorizontalScrollbarBarColor = true;
@@ -175,16 +168,6 @@
             this.gridArananOgrenciler.Size = new System.Drawing.Size(524, 268);
             this.gridArananOgrenciler.TabIndex = 5;
             // 
-            // btnOgrenciAra
-            // 
-            this.btnOgrenciAra.Location = new System.Drawing.Point(636, 135);
-            this.btnOgrenciAra.Name = "btnOgrenciAra";
-            this.btnOgrenciAra.Size = new System.Drawing.Size(223, 29);
-            this.btnOgrenciAra.TabIndex = 2;
-            this.btnOgrenciAra.Text = "ARA";
-            this.btnOgrenciAra.UseSelectable = true;
-            this.btnOgrenciAra.Click += new System.EventHandler(this.BtnOgrenciAra_Click);
-            // 
             // tbAranacakMetin
             // 
             // 
@@ -205,7 +188,7 @@
             this.tbAranacakMetin.MaxLength = 32767;
             this.tbAranacakMetin.Name = "tbAranacakMetin";
             this.tbAranacakMetin.PasswordChar = '\0';
-            this.tbAranacakMetin.PromptText = "Ara.....";
+            this.tbAranacakMetin.PromptText = "Aranacak Metni Giriniz...";
             this.tbAranacakMetin.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbAranacakMetin.SelectedText = "";
             this.tbAranacakMetin.SelectionLength = 0;
@@ -214,9 +197,10 @@
             this.tbAranacakMetin.Size = new System.Drawing.Size(223, 28);
             this.tbAranacakMetin.TabIndex = 1;
             this.tbAranacakMetin.UseSelectable = true;
-            this.tbAranacakMetin.WaterMark = "Ara.....";
+            this.tbAranacakMetin.WaterMark = "Aranacak Metni Giriniz...";
             this.tbAranacakMetin.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tbAranacakMetin.WaterMarkFont = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.tbAranacakMetin.TextChanged += new System.EventHandler(this.AramaYap);
             // 
             // cbNeyeGore
             // 
@@ -235,6 +219,7 @@
             this.cbNeyeGore.Size = new System.Drawing.Size(223, 29);
             this.cbNeyeGore.TabIndex = 0;
             this.cbNeyeGore.UseSelectable = true;
+            this.cbNeyeGore.SelectedIndexChanged += new System.EventHandler(this.AramaYap);
             // 
             // metroTabPage1
             // 
@@ -346,6 +331,7 @@
             this.tbOgrenciNo.UseSelectable = true;
             this.tbOgrenciNo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tbOgrenciNo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.tbOgrenciNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SadeceSayiyaIzinVer);
             // 
             // metroLabel3
             // 
@@ -388,6 +374,7 @@
             this.tbSoyad.UseSelectable = true;
             this.tbSoyad.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tbSoyad.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.tbSoyad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SadeceMetineIzinVer);
             // 
             // metroLabel2
             // 
@@ -430,6 +417,7 @@
             this.tbTcKimlikNo.UseSelectable = true;
             this.tbTcKimlikNo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tbTcKimlikNo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.tbTcKimlikNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SadeceSayiyaIzinVer);
             // 
             // metroLabel1
             // 
@@ -472,6 +460,7 @@
             this.tbAd.UseSelectable = true;
             this.tbAd.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tbAd.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.tbAd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SadeceMetineIzinVer);
             // 
             // pictureBox1
             // 
@@ -506,26 +495,20 @@
             this.gridOgrenciListesi.AllowUserToResizeColumns = false;
             this.gridOgrenciListesi.AllowUserToResizeRows = false;
             this.gridOgrenciListesi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridOgrenciListesi.BackgroundColor = System.Drawing.Color.Honeydew;
+            this.gridOgrenciListesi.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.gridOgrenciListesi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridOgrenciListesi.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.gridOgrenciListesi.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(219)))), ((int)(((byte)(0)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gridOgrenciListesi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.gridOgrenciListesi.ColumnHeadersHeight = 20;
+            this.gridOgrenciListesi.ColumnHeadersHeight = 25;
             this.gridOgrenciListesi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.gridOgrenciListesi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5});
             this.gridOgrenciListesi.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -551,10 +534,16 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gridOgrenciListesi.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.gridOgrenciListesi.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.gridOgrenciListesi.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.Honeydew;
-            this.gridOgrenciListesi.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            this.gridOgrenciListesi.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.MintCream;
+            this.gridOgrenciListesi.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
             this.gridOgrenciListesi.RowTemplate.ReadOnly = true;
+            this.gridOgrenciListesi.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridOgrenciListesi.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.gridOgrenciListesi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridOgrenciListesi.ShowCellErrors = false;
+            this.gridOgrenciListesi.ShowCellToolTips = false;
+            this.gridOgrenciListesi.ShowEditingIcon = false;
+            this.gridOgrenciListesi.ShowRowErrors = false;
             this.gridOgrenciListesi.Size = new System.Drawing.Size(754, 324);
             this.gridOgrenciListesi.Style = MetroFramework.MetroColorStyle.Lime;
             this.gridOgrenciListesi.TabIndex = 2;
@@ -570,7 +559,7 @@
             this.tabMain.Location = new System.Drawing.Point(5, 60);
             this.tabMain.Multiline = true;
             this.tabMain.Name = "tabMain";
-            this.tabMain.SelectedIndex = 0;
+            this.tabMain.SelectedIndex = 1;
             this.tabMain.Size = new System.Drawing.Size(901, 430);
             this.tabMain.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabMain.Style = MetroFramework.MetroColorStyle.Green;
@@ -586,31 +575,6 @@
             // 
             this.aramaBilgiYoket.Interval = 2000;
             this.aramaBilgiYoket.Tick += new System.EventHandler(this.AramaBilgiYoket_Tick);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Column2";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Column3";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Column4";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Column5";
-            this.Column5.Name = "Column5";
             // 
             // anaForm
             // 
@@ -646,7 +610,6 @@
         #endregion
 
         private MetroFramework.Controls.MetroTabPage metroTabPage2;
-        private MetroFramework.Controls.MetroButton btnOgrenciAra;
         private MetroFramework.Controls.MetroTextBox tbAranacakMetin;
         private MetroFramework.Controls.MetroComboBox cbNeyeGore;
         private MetroFramework.Controls.MetroTabPage metroTabPage1;
@@ -670,11 +633,6 @@
         private MetroFramework.Controls.MetroPanel bildirimPaneli;
         private MetroFramework.Controls.MetroLabel lbildirim;
         private System.Windows.Forms.Timer aramaBilgiYoket;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }
 
