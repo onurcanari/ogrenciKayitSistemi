@@ -1,8 +1,9 @@
-﻿using MetroFramework.Controls;
+﻿
+using OgrenciKayitSistemi;
 using System.Data;
 using System.Data.SQLite;
 using System.IO;
-using System.Windows.Forms;
+using System.Threading.Tasks;
 
 public class VeritabaniYonetimi
 {
@@ -13,15 +14,19 @@ public class VeritabaniYonetimi
     public VeritabaniYonetimi()
     {
        
-        if (!File.Exists("veritabani.sqlite"))
+        if (!File.Exists("db\\veritabani.sqlite"))
             VeritabaniOlustur();
-        con = new SQLiteConnection("Data Source=veritabani.sqlite;Version=3;");
+        VeritabaniEsitle.Esitle();
+        con = new SQLiteConnection("Data Source=db\\veritabani.sqlite;Version=3;");
+
     }
 
     // Veritabani dosyamız yoksa oluşturuyor. Ardından içinde tablo oluşturuyor.
     public void VeritabaniOlustur()
     {
-        SQLiteConnection.CreateFile("veritabani.sqlite");
+        Directory.CreateDirectory("db");
+        SQLiteConnection.CreateFile("db\\veritabani.sqlite");
+        con = new SQLiteConnection("Data Source=db\\veritabani.sqlite;Version=3;");
         string sql = @"CREATE TABLE Ogrenciler(
                        ID INTEGER PRIMARY KEY AUTOINCREMENT,
                        TCKimlikNo       TEXT        NOT NULL,
@@ -45,6 +50,8 @@ public class VeritabaniYonetimi
         selectCommand.Parameters.AddWithValue("@OgrenciNo", ogrenci.ogrenciNo);
         SQLiteDataReader dataReader = selectCommand.ExecuteReader();
         bool studentExist = dataReader.Read();
+        dataReader.Close();
+
         // Girilen tckimlikno ile öğrenci no yu kontrol et eğer bir kayda ulaşırsan ekleme
         if (studentExist)
         {
@@ -90,6 +97,7 @@ public class VeritabaniYonetimi
         con.Open();
         using(SQLiteCommand com = new SQLiteCommand(con))
         {
+            // AddWithValue kullanınca bulmuyor. şimdilik böyle kalsın sonra tekrar bak
             com.CommandText = string.Format(com.CommandText = "SELECT TCKimlikNo,Ad,Soyad,OgrenciNo FROM Ogrenciler WHERE lower({0}) ='{1}'", neyeGore, ara);
             //com.CommandText = "SELECT TCKimlikNo,Ad,Soyad,OgrenciNo FROM Ogrenciler WHERE Ad ='@Ara'";
             //com.Parameters.AddWithValue("@NeyeGore", neyeGore);
@@ -100,5 +108,6 @@ public class VeritabaniYonetimi
         con.Close();
         return dataSet.Tables["Ogrenciler"];
     }
+    
 
 }

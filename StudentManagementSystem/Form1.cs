@@ -47,9 +47,6 @@ namespace StudentManagementSystem
             {
                 BildirimGoster(1, true);
             }
-            
-            
-            
         }
 
         private void AramaYap(object sender, EventArgs e)

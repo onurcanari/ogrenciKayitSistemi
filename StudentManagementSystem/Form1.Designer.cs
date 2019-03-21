@@ -314,8 +314,7 @@
             this.tbOgrenciNo.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.tbOgrenciNo.CustomButton.UseSelectable = true;
             this.tbOgrenciNo.CustomButton.Visible = false;
-            this.tbOgrenciNo.Lines = new string[] {
-        "76852"};
+            this.tbOgrenciNo.Lines = new string[0];
             this.tbOgrenciNo.Location = new System.Drawing.Point(362, 218);
             this.tbOgrenciNo.MaxLength = 32767;
             this.tbOgrenciNo.Name = "tbOgrenciNo";
@@ -327,7 +326,6 @@
             this.tbOgrenciNo.ShortcutsEnabled = true;
             this.tbOgrenciNo.Size = new System.Drawing.Size(282, 23);
             this.tbOgrenciNo.TabIndex = 3;
-            this.tbOgrenciNo.Text = "76852";
             this.tbOgrenciNo.UseSelectable = true;
             this.tbOgrenciNo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tbOgrenciNo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -357,8 +355,7 @@
             this.tbSoyad.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.tbSoyad.CustomButton.UseSelectable = true;
             this.tbSoyad.CustomButton.Visible = false;
-            this.tbSoyad.Lines = new string[] {
-        "memet"};
+            this.tbSoyad.Lines = new string[0];
             this.tbSoyad.Location = new System.Drawing.Point(362, 170);
             this.tbSoyad.MaxLength = 32767;
             this.tbSoyad.Name = "tbSoyad";
@@ -370,7 +367,6 @@
             this.tbSoyad.ShortcutsEnabled = true;
             this.tbSoyad.Size = new System.Drawing.Size(282, 23);
             this.tbSoyad.TabIndex = 2;
-            this.tbSoyad.Text = "memet";
             this.tbSoyad.UseSelectable = true;
             this.tbSoyad.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tbSoyad.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -400,8 +396,7 @@
             this.tbTcKimlikNo.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.tbTcKimlikNo.CustomButton.UseSelectable = true;
             this.tbTcKimlikNo.CustomButton.Visible = false;
-            this.tbTcKimlikNo.Lines = new string[] {
-        "12582158"};
+            this.tbTcKimlikNo.Lines = new string[0];
             this.tbTcKimlikNo.Location = new System.Drawing.Point(362, 80);
             this.tbTcKimlikNo.MaxLength = 32767;
             this.tbTcKimlikNo.Name = "tbTcKimlikNo";
@@ -413,7 +408,6 @@
             this.tbTcKimlikNo.ShortcutsEnabled = true;
             this.tbTcKimlikNo.Size = new System.Drawing.Size(282, 23);
             this.tbTcKimlikNo.TabIndex = 0;
-            this.tbTcKimlikNo.Text = "12582158";
             this.tbTcKimlikNo.UseSelectable = true;
             this.tbTcKimlikNo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tbTcKimlikNo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -443,8 +437,7 @@
             this.tbAd.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.tbAd.CustomButton.UseSelectable = true;
             this.tbAd.CustomButton.Visible = false;
-            this.tbAd.Lines = new string[] {
-        "deniz"};
+            this.tbAd.Lines = new string[0];
             this.tbAd.Location = new System.Drawing.Point(362, 124);
             this.tbAd.MaxLength = 32767;
             this.tbAd.Name = "tbAd";
@@ -456,7 +449,6 @@
             this.tbAd.ShortcutsEnabled = true;
             this.tbAd.Size = new System.Drawing.Size(282, 23);
             this.tbAd.TabIndex = 1;
-            this.tbAd.Text = "deniz";
             this.tbAd.UseSelectable = true;
             this.tbAd.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tbAd.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -559,7 +551,7 @@
             this.tabMain.Location = new System.Drawing.Point(5, 60);
             this.tabMain.Multiline = true;
             this.tabMain.Name = "tabMain";
-            this.tabMain.SelectedIndex = 1;
+            this.tabMain.SelectedIndex = 0;
             this.tabMain.Size = new System.Drawing.Size(901, 430);
             this.tabMain.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabMain.Style = MetroFramework.MetroColorStyle.Green;
